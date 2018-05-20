@@ -2,5 +2,5 @@
 git clone $(VUEPRESS_REPO) src
 pushd src
 git pull
-vuepress build
+vuepress build -d /root/html
 popd
