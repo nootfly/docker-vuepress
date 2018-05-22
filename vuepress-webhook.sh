@@ -1,6 +1,7 @@
 #!/bin/bash
-git clone $(VUEPRESS_REPO) src
-pushd src
-git pull
+pushd $VUEPRESS_REPO
+git --work-tree=/root/src checkout HEAD -- .
+popd
+pushd /root/src
 vuepress build -d /root/html
 popd
