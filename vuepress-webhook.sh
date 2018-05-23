@@ -1,8 +1,6 @@
 #!/bin/bash
-pushd $VUEPRESS_REPO
-git --work-tree=/root/src checkout HEAD -- .
-popd
+mkdir /root/src
 pushd /root/src
-vuepress build
-rm -rf /root/html/*; cp -a .vuepress/dist/* /root/html/
+git clone $VUEPRESS_REPO .; git pull
+vuepress build && rm -rf /root/html/*; cp -a .vuepress/dist/* /root/html/
 popd
