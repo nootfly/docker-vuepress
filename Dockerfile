@@ -1,4 +1,4 @@
-FROM node:11.4.0-slim
+FROM node:11.4.0
 
 WORKDIR root
 RUN yarn global add vuepress@0.14.8
