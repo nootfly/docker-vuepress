@@ -2,12 +2,12 @@ FROM node:11.4.0
 
 ARG ssh_prv_key
 ARG ssh_pub_key
-ARG git_server
+ARG fingerprint
 
 # Authorize SSH Host
 RUN mkdir -p /root/.ssh && \
     chmod 0700 /root/.ssh && \
-    ssh-keyscan $git_server > /root/.ssh/known_hosts
+    echo "$fingerprint" > /root/.ssh/known_hosts
 
 # Add the keys and set permissions
 RUN echo "$ssh_prv_key" > /root/.ssh/id_rsa && \
