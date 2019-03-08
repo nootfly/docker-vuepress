@@ -22,5 +22,5 @@ RUN curl -sL https://github.com/adnanh/webhook/releases/download/2.6.8/webhook-l
 COPY vuepress-webhook.sh /usr/local/bin
 COPY hooks.json hooks.json
 
-EXPOSE 9000 80
+EXPOSE 9000
 ENTRYPOINT ["webhook", "-verbose"]
